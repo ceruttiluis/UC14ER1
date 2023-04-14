@@ -9,6 +9,7 @@ namespace Chapter.Controllers
     [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
+
     public class LivroController : ControllerBase
     {
         private readonly LivroRepository _livroRepository;
@@ -48,6 +49,7 @@ namespace Chapter.Controllers
             }
         }
 
+        [Authorize(Roles = "0")]
         [HttpPost]
         public IActionResult Cadastrar(Livro livro) 
         {
